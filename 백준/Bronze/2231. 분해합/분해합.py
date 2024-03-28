@@ -1,11 +1,10 @@
 N = int(input())
 
 for i in range(1, N+1) :
-    num = list(map(int, str(i)))
-    result = sum(num) + i
-    if N == result :
+    number = list(map(int, str(i)))
+    if N == sum(number) + i :
         print(i)
         break
     else :
-        if N == i :
+        if i == N :
             print(0)
