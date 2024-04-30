@@ -1,6 +1,6 @@
 import sys
 
-S = set()
+S = []
 M = int(sys.stdin.readline())
 
 for _ in range(M):
@@ -13,11 +13,11 @@ for _ in range(M):
         if x in S:
             pass
         else:
-            S.add(x)
+            S.append(x)
 
     if command == "remove":
         if x in S:
-            S.discard(x)
+            S.remove(x)
         else:
             pass
 
@@ -29,12 +29,13 @@ for _ in range(M):
 
     if command == "toggle":
         if x in S:
-            S.discard(x)
+            S.remove(x)
         else:
-            S.add(x)    
+            S.append(x)    
 
     if command == "all":
-        S = set(range(1, 21))
+        S.clear()
+        S.extend(range(1, 21))
 
     if command == "empty":
         S.clear()
