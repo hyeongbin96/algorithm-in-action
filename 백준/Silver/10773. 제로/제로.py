@@ -1,9 +1,11 @@
-K = int(input())
+import sys
+
+K = int(sys.stdin.readline())
 
 result = []
 
 for _ in range(K) :
-    num = int(input())
+    num = int(sys.stdin.readline())
     if num == 0 :
         result.pop()
     else :
