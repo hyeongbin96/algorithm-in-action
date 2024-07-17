@@ -1,7 +1,10 @@
 def solution(emergency):
-    lst0 = emergency.copy()
-    lst1 = sorted(emergency, reverse=True).copy()
-    for idx, num in enumerate(lst1):
-        if num in lst0:
-            emergency.__setitem__(lst0.index(num), idx+1)
-    return emergency
+    answer = sorted(emergency, reverse=True)
+    result = []
+    for i in emergency:
+        result.append(answer.index(i) + 1)
+
+    return result
+
+
+print(solution([3, 76, 24]))
