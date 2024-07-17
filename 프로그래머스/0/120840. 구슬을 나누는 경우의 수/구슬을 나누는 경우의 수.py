@@ -1,7 +1,5 @@
 def solution(balls, share):
-    bunmo = number(balls - share) * number(share)
-    bunja = number(balls)
-    answer = bunja // bunmo
+    answer = number(balls) // (number(balls - share) * number(share))
     return answer
 
 
