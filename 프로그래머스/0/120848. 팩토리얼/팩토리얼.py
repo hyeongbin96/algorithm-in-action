@@ -1,11 +1,10 @@
 def solution(n):
-    answer = 1
+    sum = 1
     num = 1
 
-    while num <= n:
-        num = 1
-        for i in range(1, answer + 1):
-            num *= i
-        answer += 1
+    while sum <= n:
+        num += 1
+        sum *= num
+        print(f"{num}! = {sum}")
 
-    return answer - 2
+    return num-1
