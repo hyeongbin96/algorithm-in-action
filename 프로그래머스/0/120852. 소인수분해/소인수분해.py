@@ -1,4 +1,4 @@
-def solution(n):
+def get_isPrime(n):
     answer = [2]
     for i in range(3, n + 1):
         for j in range(2, i + 1):
@@ -7,7 +7,11 @@ def solution(n):
             else:
                 if j == i - 1:
                     answer.append(i)
+    return answer
 
+
+def solution(n):
+    answer = get_isPrime(n)
     result = []
     idx = 0
     while n > 1:
