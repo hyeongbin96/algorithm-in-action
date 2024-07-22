@@ -1,10 +1,8 @@
 def solution(sides):
     answer = 0
-    max_line = max(sides)
-    sides.remove(max(sides))
-
-    if max_line < sum(sides):
+    if max(sides) < (sum(sides) - max(sides)):
         answer = 1
     else:
-        answer = 2    
+        answer = 2
+        
     return answer
