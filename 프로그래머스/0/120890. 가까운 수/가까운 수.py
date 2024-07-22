@@ -1,9 +1,6 @@
 def solution(array, n):
+    array.sort()
     answer = []
-    result = [abs(n - i) for i in array]
-
-    for i in range(len(result)):
-        if result[i] == min(result):
-            answer.append(array[i])
+    answer = [abs(n - i) for i in array]
             
-    return min(answer)
+    return array[answer.index(min([abs(n - i) for i in array]))]
