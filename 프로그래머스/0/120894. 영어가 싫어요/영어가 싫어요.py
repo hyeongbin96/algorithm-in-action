@@ -1,9 +1,18 @@
 def solution(numbers):
-    answer = ""
-    eng = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    eng = [
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+    ]
 
-    for i in range(len(eng)):
-        if eng[i] in numbers:
-            numbers = numbers.replace(eng[i], str(i))
+    for k, v in enumerate(eng):
+        numbers = numbers.replace(v, str(k))
 
     return int(numbers)
