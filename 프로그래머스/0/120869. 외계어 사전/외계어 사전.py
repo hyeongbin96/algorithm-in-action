@@ -1,4 +1,8 @@
 def solution(spell, dic):
-    answer = ["".join(sorted(value)) for value in dic if "".join(sorted(spell)) == "".join(sorted(value))]
-    
-    return 1 if "".join(sorted(spell)) in answer else 2
+    for value in dic:
+        if sorted(spell) == sorted(value):
+            # print(sorted(spell), sorted(value))
+            return 1
+        # print(sorted(spell), sorted(value))
+
+    return 2
