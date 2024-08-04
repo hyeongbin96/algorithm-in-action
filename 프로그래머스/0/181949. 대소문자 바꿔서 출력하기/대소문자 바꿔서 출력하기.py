@@ -1,9 +1,2 @@
 str = input()
-answer = ""
-for i in str:
-    if i in "abcdefghijklmnopqrstuvwxyz":
-        answer += i.upper()
-    else:
-        answer += i.lower()
-
-print(answer)
+print("".join(i.lower() if i.isupper() == True else i.upper() for i in str))
