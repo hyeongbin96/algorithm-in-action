@@ -1,11 +1,4 @@
 def solution(arr, divisor):
-    answer = []
+    answer = [i for i in arr if i % divisor == 0]
 
-    for i in range(len(arr)):
-        if arr[i] % divisor == 0:
-            answer.append(arr[i])
-        if i == len(arr) - 1:
-            if len(answer) == 0:
-                return [-1]
-            else:
-                return sorted(answer)
+    return [-1] if len(answer) == 0 else sorted(answer)
