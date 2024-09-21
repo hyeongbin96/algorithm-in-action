@@ -1,17 +1,20 @@
 def solution(s):
     answer = ""
 
-    i = 1
-    for idx, word in enumerate((s)):
+    i = 0
+    for word in s:
         if word == " ":
             answer += " "
-            i = 1
+            i = 0
         else:
             if i % 2 == 0:
-                answer += word.lower()
+                answer += word.upper()
                 i += 1
             else:
-                answer += word.upper()
+                answer += word.lower()
                 i += 1
 
     return answer
+
+
+# print(solution("try hello world"))
