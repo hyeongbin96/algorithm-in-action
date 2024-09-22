@@ -1,12 +1,11 @@
 def solution(s):
     answer = []
-    ori = ""
+    dic = dict()
     for idx, word in enumerate(s):
-        if word not in ori:
+        if word not in dic:
             answer.append(-1)
         else:
-            answer.append(idx - ori.index(word))
-            ori = ori.replace(word, "#", idx)
-        ori += word
+            answer.append(idx - dic[word])
+        dic[word] = idx
 
     return answer
