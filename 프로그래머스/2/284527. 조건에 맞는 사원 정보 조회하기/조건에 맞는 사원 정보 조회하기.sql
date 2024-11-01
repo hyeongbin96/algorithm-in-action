@@ -1,0 +1,20 @@
+SELECT
+    SCORE,
+    HG.EMP_NO,
+    EMP_NAME,
+    POSITION,
+    EMAIL
+FROM
+    HR_EMPLOYEES HE
+JOIN
+    (SELECT
+        SUM(SCORE) AS SCORE,
+        EMP_NO
+     FROM
+        HR_GRADE
+     GROUP BY
+        EMP_NO
+    ) HG ON HE.EMP_NO = HG.EMP_NO
+ORDER BY
+    SCORE DESC
+LIMIT 1
