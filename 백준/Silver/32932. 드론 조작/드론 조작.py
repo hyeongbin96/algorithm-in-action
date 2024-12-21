@@ -4,27 +4,14 @@ commands = input()
 
 x, y = 0, 0
 
-
 for command in commands:
-    if command == "U":
-        if [x, y + 1] in block:
-            pass
-        else:
-            y += 1
-    elif command == "D":
-        if [x, y - 1] in block:
-            pass
-        else:
-            y -= 1
-    elif command == "R":
-        if [x + 1, y] in block:
-            pass
-        else:
-            x += 1
-    else:
-        if [x - 1, y] in block:
-            pass
-        else:
-            x -= 1
+    if command == "U" and [x, y + 1] not in block:
+        y += 1
+    elif command == "D" and [x, y - 1] not in block:
+        y -= 1
+    elif command == "R" and [x + 1, y] not in block:
+        x += 1
+    elif command == "L" and [x - 1, y] not in block:
+        x -= 1
 
 print(x, y)
